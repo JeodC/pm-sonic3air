@@ -13,10 +13,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(WORKSPACE_DIR ../../../..)
 
 # Find required packages
-find_package(OpenGL REQUIRED)
 find_package(SDL2 REQUIRED)
 find_package(Threads REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
+
+# Add definitions
+# add_definitions(-DRMX_USE_GLES2)
 
 # zlib sources as virtual subdirectory "zlib"
 include_directories(${WORKSPACE_DIR}/framework/external/zlib/zlib)
@@ -60,9 +62,7 @@ target_link_libraries(rmxbase zlibstatic)
 file(GLOB_RECURSE RMXMEDIA_SOURCES ${WORKSPACE_DIR}/librmx/source/rmxmedia/*.cpp
                                    ${WORKSPACE_DIR}/librmx/source/rmxmedia/_glew/*.c)
 add_library(rmxmedia ${RMXMEDIA_SOURCES})
-target_link_libraries(rmxmedia rmxbase)
-target_link_libraries(rmxmedia SDL2::SDL2)
-target_link_libraries(rmxmedia OpenGL::GL)
+target_link_libraries(rmxmedia rmxbase SDL2::SDL2)
 
 # rmxext_oggvorbis
 file(GLOB RMXEXT_OGGVORBIS_SOURCES ${WORKSPACE_DIR}/librmx/source/rmxext_oggvorbis/*.cpp)
