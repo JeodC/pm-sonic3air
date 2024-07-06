@@ -27,11 +27,8 @@ This repository is split into several different projects:
 ## How to build
 For information on how to build for different platforms, find the readme files in the respective subdirectories of "Oxygen/sonic3air/build":
 * Windows: "_vstudio"
-* Mac:     "_xcode"
 * Linux:   "_cmake"
 * Android: "_android"
-* Web:     "_emscripten"
-* Switch:  "_make" (unmaintained)
 
 Additional platform ports:
 * Vita: See https://github.com/v-atamanenko/sonic3air
