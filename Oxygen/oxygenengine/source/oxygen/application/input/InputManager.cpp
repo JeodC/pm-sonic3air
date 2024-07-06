@@ -616,9 +616,6 @@ InputManager::RescanResult InputManager::rescanRealDevices()
 		device.mSDLJoystick = joystick;
 		device.mSDLGameController = controller;
 		device.mSDLJoystickInstanceId = joystickInstanceId;
-	#if SDL_VERSION_ATLEAST(2, 0, 18)
-		device.mSupportsRumble = SDL_JoystickHasRumble(joystick);
-	#endif
 
 		// Try to find a matching device definition in configuration
 		InputConfig::DeviceDefinition* matchingInputDeviceDefinition = nullptr;
