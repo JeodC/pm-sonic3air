@@ -31,8 +31,6 @@ You can add the -j option to the last line to enable use of multiple processor c
 	- cmake --build . -j 6
 	=> Replace the 6 with the number of cores or your CPU, or a little less to not consume all CPU performance of your machine just for the build.
 
-
-
 === Run Linux Build ===
 
 Check if the CMake build created the sonic3air_linux binary in the correct location, namely inside "Oxygen/sonic3air".
